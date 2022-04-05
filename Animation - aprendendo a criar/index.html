@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes anda {
+            0% {
+                transform: translateX(0);
+                background: purple;
+            }
+            100% {
+                transform: translateX(300px);
+                background: pink;
+            }
+        }
+        
+        #anima-time div {
+            width: 80px;
+            height: 50px;
+            border: 2px solid blue;
+            text-align: center;
+        }
+        
+        #anima-time div:nth-child(1) {
+            animation-name: anda;
+            animation-duration: 2s;
+            animation-timing-function: ease-in-out;
+        }
+        
+        #anima-time div:nth-child(2) {
+            /* animation: anda 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 4;
+            animation-direction: alternate-reverse; */
+            background: yellow;
+            animation: anda 2s ease-in-out 1s 4 alternate-reverse;
+        }
+        
+        #anima-time div:nth-child(3) {
+            animation: anda 2s ease-in-out 3 alternate-reverse;
+            animation-delay: 1s;
+        }
+        
+        #anima-time div:nth-child(4) {
+            background: green;
+            animation: anda 3s ease-in-out 1s 2 alternate;
+            animation-fill-mode: backwards;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <h2>Animation</h2>
+
+    <p>Ordem correta para shorthand: <code>animation: name duraction timing-function delay iteration-count direction fill-mode pla-state</code></p>
+
+    <div id="anima-time">
+        <div>One</div>
+        <div>Two</div>
+        <div>Three</div>
+        <div>Four</div>
+    </div>
+
+</body>
+
+</html>
